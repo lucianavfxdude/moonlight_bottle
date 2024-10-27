@@ -92,14 +92,15 @@ spawn(function()
 		wait(6)
 		soundNew:Destroy()
 	end)
+	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
+	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 7)
 	gdPossess.Parent = getRoot()
-	local ogspeedboost = game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
-	ogspeedboost = ogspeedboost + 7
 	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12
 	wait(0.2)
 	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12
 	wait(35)
-	ogspeedboost = ogspeedboost - 7
+	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 7)
+	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
 	newCloneEffect:Destroy()
 end)
 				end
