@@ -94,7 +94,7 @@ spawn(function()
 	end)
 	gdPossess.Parent = getRoot()
 	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12
-	wait(0.5)
+	wait(0.2)
 	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12
 end)
 				end
