@@ -178,13 +178,15 @@ toolNew.Activated:Connect(function()
         if durability - 1 ~= 0 then
             durability = durability - 1
             toolNew:SetAttribute("Durability", durability)
+	    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health - 12.5
+	    wait(0.5)
+	    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health - 12.5
         else
 			drinked = true
 			ended = true
             toolNew:Destroy()
 			wait(7)
 			workspace:FindFirstChild("DrinkPotionAddonSound"):Destroy()
-			game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
         end
 	end
 end)
