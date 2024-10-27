@@ -173,9 +173,9 @@ toolNew.Activated:Connect(function()
         if durability - 1 ~= 0 then
             durability = durability - 1
             toolNew:SetAttribute("Durability", durability)
-	    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health - 12.5
+	    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health - 12
 	    wait(0.5)
-	    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health - 12.5
+	    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health - 12
         else
 			drinked = true
 			ended = true
