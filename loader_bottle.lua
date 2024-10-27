@@ -57,7 +57,8 @@ soundNew.Name = "_ThunderStrikeGD"
 soundNew.SoundId = "rbxassetid://1079408535"
 local soundNew2 = Instance.new("Sound",workspace)
 soundNew2.Name = "_ThunderStrikeGD2"
-soundNew2.SoundId = "rbxassetid://1841210008"
+soundNew2.SoundId = "rbxassetid://9114622334"
+soundNew2.PlaybackSpeed = 0.68
 local gdPossess = nil
 if game.GameId == 6627207668 then
 	gdPossess = script.GuidingLightStuff:Clone()
