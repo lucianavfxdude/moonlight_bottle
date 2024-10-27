@@ -93,9 +93,14 @@ spawn(function()
 		soundNew:Destroy()
 	end)
 	gdPossess.Parent = getRoot()
+	local ogspeedboost = game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
+	ogspeedboost = ogspeedboost + 7
 	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12
 	wait(0.2)
 	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12
+	wait(35)
+	ogspeedboost = ogspeedboost - 7
+	newCloneEffect:Destroy()
 end)
 				end
 			end
