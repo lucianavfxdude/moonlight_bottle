@@ -106,7 +106,7 @@ local function EffectOnScreen()
 		if clone then
 			local clone_2 = clone:Clone()
 			clone_2.Name ..= "Live"
-			clone_2.ImageColor3 = Color3.fromRGB(142, 236, 255)
+			clone_2.ImageColor3 = Color3.fromRGB(255, 0, 38)
 			clone_2.ImageTransparency = 1
 			clone_2.Parent = MainUI_upvr.MainFrame
 			clone_2.Visible = true
