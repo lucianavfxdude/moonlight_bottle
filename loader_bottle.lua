@@ -62,7 +62,7 @@ local gdPossess = nil
 if game.GameId == 6627207668 then
 	gdPossess = script.GuidingLightStuff:Clone()
 else
-	gdPossess = game:GetObjects("rbxassetid://107690853507208")[1]
+	gdPossess = LoadCustomInstance("https://github.com/lucianavfxdude/moonlight_bottle/blob/main/redlightstuff.rbxm?raw=true")
 end
 gdPossess.LockedToPart = true
 if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainUI") then repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainUI") end
@@ -100,7 +100,6 @@ spawn(function()
 end)
 
 function flyR()
-							print("r")
 end)
 
 local function EffectOnScreen()
