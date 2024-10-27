@@ -1,17 +1,21 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
+
 local TweenService_upvr = game:GetService("TweenService")
 local MainUI_upvr = nil
 if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainUI") then repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainUI") end
 MainUI_upvr = game.Players.LocalPlayer.PlayerGui.MainUI
 local toolNew
 if game.GameId == 6627207668 then
-	toolNew = game.ReplicatedStorage["Moon Bottle"]:Clone()
+	toolNew = game.ReplicatedStorage["SpiralJug"]:Clone()
 else
-	toolNew = game:GetObjects("rbxassetid://106070375280557")[1]
+	toolNew = LoadCustomInstance("https://github.com/lucianavfxdude/moonlight_bottle/blob/main/barrelspirallight.rbxm?raw=true")
+	toolNew.Name = "SpiralJug"
 end
 local newCloneEffect = MainUI_upvr.MainFrame.Healthbar.Effects.HerbGreenEffect:Clone()
 local drinked = false
 local rared = false
 local ended = false
+local durability = 4
 newCloneEffect.Name = "GuidingLightPotion"
 newCloneEffect.ImageColor3 = Color3.fromRGB(255,255,255)
 if math.random(1,50) == 1 then
@@ -24,8 +28,8 @@ end
 newCloneEffect.Visible = false
 newCloneEffect.Parent = MainUI_upvr.MainFrame.Healthbar.Effects
 
-local ohhmydayz = game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):LoadAnimation(toolNew.bals.idle)
-local ohhmydayz2 = game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):LoadAnimation(toolNew.bals.open)
+local ohhmydayz = game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):LoadAnimation(toolNew.Animations.idle)
+local ohhmydayz2 = game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):LoadAnimation(toolNew.Animations.open)
 local ohhmydayz3 = game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):LoadAnimation(toolNew.Animations.open)
 
 spawn(function()
@@ -40,11 +44,63 @@ spawn(function()
 					newTool.Parent = game.Players.LocalPlayer.Backpack
 					newTool.Enabled = true
 				else
-					loadstring(game:HttpGet('https://gist.githubusercontent.com/IdkMyNameLoll/e7973053bf9baa5fd89e15e1c3766496/raw/ead7b7131370775774a41cb7d0824909bf1959f8/flyTestGuidingLightbottle'))()
-				end
-			end
-		end
+					FLYING = false
+QEfly = true
+iyflyspeed = 0.35
+vehicleflyspeed = 1
+local vfly = false
+local Players = game.Players
+local MainUI_upvr = nil
+local TweenService_upvr = game:GetService("TweenService")
+local soundNew = Instance.new("Sound",workspace)
+soundNew.Name = "_ThunderStrikeGD"
+soundNew.SoundId = "rbxassetid://1079408535"
+local soundNew2 = Instance.new("Sound",workspace)
+soundNew2.Name = "_ThunderStrikeGD2"
+soundNew2.SoundId = "rbxassetid://9113122694"
+local gdPossess = nil
+if game.GameId == 6627207668 then
+	gdPossess = script.GuidingLightStuff:Clone()
+else
+	gdPossess = game:GetObjects("rbxassetid://107690853507208")[1]
+end
+gdPossess.LockedToPart = true
+if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainUI") then repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainUI") end
+MainUI_upvr = game.Players.LocalPlayer.PlayerGui.MainUI
+function getRoot(PlayerChar)
+	if PlayerChar == nil then
+		PlayerChar = game.Players.LocalPlayer.Character
 	end
+	if not PlayerChar:FindFirstChild("HumanoidRootPart") then
+		return PlayerChar.PrimaryPart
+	else
+		return PlayerChar.HumanoidRootPart
+	end
+end
+local IYMouse = game.Players.LocalPlayer:GetMouse()
+
+spawn(function()
+	wait(3)
+	soundNew2:Play()
+	local newColorEcction = Instance.new("ColorCorrectionEffect",game.Lighting)
+	TweenService_upvr:Create(newColorEcction, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+		Brightness = 2,
+		TintColor = Color3.fromRGB(252, 128, 119)
+	}):Play()
+	wait(6)
+	newColorEcction:Destroy()
+	soundNew2:Destroy()
+	soundNew:Play()
+	spawn(function()
+		wait(6)
+		soundNew:Destroy()
+	end)
+	gdPossess.Parent = getRoot()
+	flyR()
+end)
+
+function flyR()
+							print("r")
 end)
 
 local function EffectOnScreen()
@@ -93,6 +149,7 @@ function drinkSoundPlay()
 end
 
 toolNew.Parent = game.Players.LocalPlayer.Backpack
+toolNew:SetAttribute("Durability", durability)
 
 toolNew.Equipped:Connect(function()
 	if game.GameId == 6627207668 then
@@ -118,5 +175,16 @@ toolNew.Activated:Connect(function()
 		end
 		drinked = false
 		ended = false
+        if durability - 1 ~= 0 then
+            durability = durability - 1
+            toolNew:SetAttribute("Durability", durability)
+        else
+			drinked = true
+			ended = true
+            toolNew:Destroy()
+			wait(7)
+			workspace:FindFirstChild("DrinkPotionAddonSound"):Destroy()
+			game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
+        end
 	end
 end)
