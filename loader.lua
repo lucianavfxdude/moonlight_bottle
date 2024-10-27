@@ -80,14 +80,14 @@ end
 local IYMouse = game.Players.LocalPlayer:GetMouse()
 
 spawn(function()
-	wait(2)
+	wait(3)
 	soundNew2:Play()
 	local newColorEcction = Instance.new("ColorCorrectionEffect",game.Lighting)
 	TweenService_upvr:Create(newColorEcction, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
-		Brightness = 1,
+		Brightness = 2,
 		TintColor = Color3.fromRGB(151, 222, 252)
 	}):Play()
-	wait(4.5)
+	wait(6)
 	newColorEcction:Destroy()
 	soundNew2:Destroy()
 	soundNew:Play()
