@@ -1,3 +1,5 @@
+-- fix tmr plz
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
 
 local TweenService_upvr = game:GetService("TweenService")
