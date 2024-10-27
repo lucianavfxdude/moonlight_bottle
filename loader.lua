@@ -84,8 +84,8 @@ spawn(function()
 	soundNew2:Play()
 	local newColorEcction = Instance.new("ColorCorrectionEffect",game.Lighting)
 	TweenService_upvr:Create(newColorEcction, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
-		Brightness = 0.8,
-		TintColor = Color3.fromRGB(168, 229, 255)
+		Brightness = 1,
+		TintColor = Color3.fromRGB(151, 222, 252)
 	}):Play()
 	wait(4.5)
 	newColorEcction:Destroy()
