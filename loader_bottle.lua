@@ -17,7 +17,7 @@ local rared = false
 local ended = false
 local durability = 4
 newCloneEffect.Name = "GuidingLightPotion"
-newCloneEffect.ImageColor3 = Color3.fromRGB(219, 29, 48)
+newCloneEffect.ImageColor3 = Color3.fromRGB(242, 68, 85)
 if math.random(1,50) == 1 then
 	newCloneEffect.Image = "rbxassetid://14380950090"
 	rared = true
