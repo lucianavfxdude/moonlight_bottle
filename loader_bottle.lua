@@ -92,6 +92,7 @@ spawn(function()
 		wait(6)
 		soundNew:Destroy()
 	end)
+	newCloneEffect.Visible = true
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 7)
 	gdPossess.Parent = getRoot()
@@ -101,7 +102,7 @@ spawn(function()
 	wait(40)
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 7)
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
-	newCloneEffect:Destroy()
+	newCloneEffect.Visible = false
 end)
 				end
 			end
