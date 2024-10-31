@@ -96,9 +96,9 @@ spawn(function()
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 7)
 	gdPossess.Parent = getRoot()
-	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12.5
+	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12.3
 	wait(0.3)
-	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12.5
+	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12.3
 	wait(40)
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 7)
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
