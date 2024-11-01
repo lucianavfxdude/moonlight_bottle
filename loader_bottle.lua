@@ -94,7 +94,7 @@ spawn(function()
 	end)
 	newCloneEffect.Visible = true
 	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 0)
-	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 7)
+	game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", 8)
 	gdPossess.Parent = getRoot()
 	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health - 12.3
 	wait(0.3)
