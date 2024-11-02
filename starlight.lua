@@ -1,4 +1,3 @@
-
 local TweenService = game:GetService("TweenService")
 local Wc = game:GetService("Workspace")
 local StarJug = game:GetObjects("rbxassetid://119885581324516")[1]
@@ -61,9 +60,6 @@ StarJug.Activated:Connect(function()
         drink:Destroy()
     end
     
-    character:SetAttribute("Starlight", true)
-    character:SetAttribute("StarlightHuge", true)
-    
     local speedBoost, speedBoostFinished, mspaint_speed = 30, false, false
     if getgenv().mspaint_loaded then
         if collisionClone then collisionClone:Destroy() end
@@ -115,8 +111,6 @@ StarJug.Activated:Connect(function()
     conn:Disconnect()
     collisionClone:Destroy()
     
-    character:SetAttribute("Starlight", false)
-    character:SetAttribute("StarlightHuge", false)
     character:SetAttribute("SpeedBoost", 0)
     debounce = false
 end)
