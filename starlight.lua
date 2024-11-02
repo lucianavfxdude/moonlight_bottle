@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
+
 local TweenService = game:GetService("TweenService")
 local Wc = game:GetService("Workspace")
 local StarJug = game:GetObjects("rbxassetid://119885581324516")[1]
