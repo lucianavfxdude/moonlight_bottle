@@ -2,7 +2,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utiliti
 
 local TweenService = game:GetService("TweenService")
 local Wc = game:GetService("Workspace")
-local StarJug = game:GetObjects("rbxassetid://119885581324516")[1]
+local StarJug = LoadCustomInstance("https://github.com/lucianavfxdude/moonlight_bottle/blob/main/star.rbxm?raw=true")
 StarJug.ToolModule:Destroy()
 
 local speedTweenValue = Instance.new("NumberValue", StarJug)
