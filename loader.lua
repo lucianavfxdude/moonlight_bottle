@@ -36,7 +36,7 @@ spawn(function()
 	while wait() do
 		if drinked == true and ended == false then
 			if rared == true then
-				game.Players.LocalPlayer.Character:SetAttribute("CanJump",true)
+				game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = 101
 			else
 				ended = true
 				if game.GameId == 6627207668 then
