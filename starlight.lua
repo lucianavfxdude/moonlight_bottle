@@ -21,6 +21,11 @@ local MainUI_upvr = game.Players.LocalPlayer.PlayerGui.MainUI
 local TweenService_upvr = game:GetService("TweenService")
 local clone = MainUI_upvr.MainFrame.WhiteVignette:Clone()
 if clone then
+	local newColorEcction = Instance.new("ColorCorrectionEffect",game.Lighting)
+	-- TweenService_upvr:Create(newColorEcction, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+		newColorEcction.Brightness = 1
+		newColorEcction.TintColor = Color3.fromRGB(255, 232, 117)
+	-- }):Play()
 	local clone_2 = clone:Clone()
 	clone_2.Name ..= "Live"
 	clone_2.ImageColor3 = Color3.fromRGB(255, 232, 117)
@@ -38,7 +43,11 @@ if clone then
 	TweenService_upvr:Create(clone_2, TweenInfo.new(4.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {
 		ImageTransparency = 1;
 	}):Play()
+	TweenService_upvr:Create(newColorEcction, TweenInfo.new(4.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {
+		Brightness = 0
+	}):Play()
 	wait(4.5)
+	newColorEcction:Destroy()
 	clone_2:Destroy()
 end
 end
