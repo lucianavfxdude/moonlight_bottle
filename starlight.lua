@@ -62,7 +62,7 @@ StarJug.Activated:Connect(function()
         drink:Destroy()
     end
 
-    character:SetAttribute("StarlightHuge", true)
+    character:SetAttribute("Starlight", true)
         
     local speedBoost, speedBoostFinished, mspaint_speed = 30, false, false
     if getgenv().mspaint_loaded then
@@ -116,6 +116,6 @@ StarJug.Activated:Connect(function()
     collisionClone:Destroy()
     
     character:SetAttribute("SpeedBoost", 0)
-    character:SetAttribute("StarlightHuge", false)
+    character:SetAttribute("Starlight", false)
     debounce = false
 end)
