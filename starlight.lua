@@ -88,8 +88,6 @@ StarJug.Activated:Connect(function()
         StarJug:Destroy()
         drink:Destroy()
     end
-
-    vignet()
         
     local speedBoost, speedBoostFinished, mspaint_speed = 30, false, false
     if getgenv().mspaint_loaded then
@@ -135,7 +133,9 @@ StarJug.Activated:Connect(function()
     local conn; conn = speedTweenValue:GetPropertyChangedSignal("Value"):Connect(function()
         character:SetAttribute("SpeedBoost", speedTweenValue.Value)
     end)
-    
+
+    vignet()
+		
     task.wait(35)
     
     speedBoostFinished = true
