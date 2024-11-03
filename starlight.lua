@@ -23,7 +23,7 @@ local clone = MainUI_upvr.MainFrame.WhiteVignette:Clone()
 if clone then
 	local newColorEcction = Instance.new("ColorCorrectionEffect",game.Lighting)
 	-- TweenService_upvr:Create(newColorEcction, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
-		newColorEcction.Brightness = 1
+		newColorEcction.Brightness = 0.5
 		newColorEcction.TintColor = Color3.fromRGB(255, 232, 117)
 	-- }):Play()
 	local clone_2 = clone:Clone()
@@ -35,6 +35,10 @@ if clone then
 	TweenService_upvr:Create(clone_2, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
 		ImageTransparency = 0;
 	}):Play()
+	TweenService_upvr:Create(newColorEcction, TweenInfo.new(4.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {
+		Brightness = 0,
+		TintColor = Color3.fromRGB(255, 255, 254)
+	}):Play()
 	wait(5)
 	TweenService_upvr:Create(clone_2, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
 		Size = UDim2.new(1.5, 0, 1.5, 0);
@@ -42,9 +46,6 @@ if clone then
 	wait(0.5)
 	TweenService_upvr:Create(clone_2, TweenInfo.new(4.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {
 		ImageTransparency = 1;
-	}):Play()
-	TweenService_upvr:Create(newColorEcction, TweenInfo.new(4.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {
-		Brightness = 0
 	}):Play()
 	wait(4.5)
 	newColorEcction:Destroy()
