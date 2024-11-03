@@ -50,18 +50,20 @@ StarJug.Activated:Connect(function()
     debounce = true
     
     LoadedAnims["open"]:Play()
-    local drink = Instance.new("Sound",workspace)
-    drink.SoundId = "rbxassetid://18869124055"
-    drink:Play()
     
     if durability - 1 ~= 0 then
         durability = durability - 1
         StarJug:SetAttribute("Durability", durability)
+        StarJug.Handle.sound_drink.PlayOnRemove = false
+        StarJug.Handle.sound_drink:Play()
     else
+        StarJug.Handle.sound_drink.PlayOnRemove = true
         StarJug:Destroy()
         drink:Destroy()
     end
-    
+
+    character:SetAttribute("StarlightHuge", true)
+        
     local speedBoost, speedBoostFinished, mspaint_speed = 30, false, false
     if getgenv().mspaint_loaded then
         if collisionClone then collisionClone:Destroy() end
@@ -114,5 +116,6 @@ StarJug.Activated:Connect(function()
     collisionClone:Destroy()
     
     character:SetAttribute("SpeedBoost", 0)
+    character:SetAttribute("StarlightHuge", false)
     debounce = false
 end)
