@@ -16,6 +16,33 @@ StarJug.Parent = game.Players.LocalPlayer.Backpack
 local character = game.Players.LocalPlayer.Character
 local humanoid = character:FindFirstChildOfClass("Humanoid")
 
+function vignet()
+local MainUI_upvr = game.Players.LocalPlayer.PlayerGui.MainUI
+local TweenService_upvr = game:GetService("TweenService")
+local clone = MainUI_upvr.MainFrame.WhiteVignette:Clone()
+if clone then
+	local clone_2 = clone:Clone()
+	clone_2.Name ..= "Live"
+	clone_2.ImageColor3 = Color3.fromRGB(255, 232, 117)
+	clone_2.ImageTransparency = 1
+	clone_2.Parent = MainUI_upvr.MainFrame
+	clone_2.Visible = true
+	TweenService_upvr:Create(clone_2, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
+		ImageTransparency = 0;
+	}):Play()
+	wait(5)
+	TweenService_upvr:Create(clone_2, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+		Size = UDim2.new(1.5, 0, 1.5, 0);
+	}):Play()
+	wait(0.5)
+	TweenService_upvr:Create(clone_2, TweenInfo.new(4.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {
+		ImageTransparency = 1;
+	}):Play()
+	wait(4.5)
+	clone_2:Destroy()
+end
+end
+
 local Animations = StarJug:WaitForChild("Animations")
 local LoadedAnims = {}
 
@@ -61,6 +88,8 @@ StarJug.Activated:Connect(function()
         StarJug:Destroy()
         drink:Destroy()
     end
+
+    vignet()
         
     local speedBoost, speedBoostFinished, mspaint_speed = 30, false, false
     if getgenv().mspaint_loaded then
